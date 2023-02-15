@@ -5,9 +5,10 @@ const array = ["ROCK", "PAPER", "SCISSORS"];
 let scorePlayer = 0
 let scoreComputer = 0
 
+
 function playRound(playerSelection, computerSelection) {
     // get player input from event listener
-   
+    document.getElementById('declare-winner').textContent = ' .....aaaand the winner is.....';
     //get computer choice
    function getComputerChoice(choice) {
        // get random index value
@@ -42,19 +43,21 @@ function playRound(playerSelection, computerSelection) {
            scoreComputer = scoreComputer +1;
        };
     
-    console.log(message);
-    console.log('Player score: '+scorePlayer);
-    console.log('Computer score: '+scoreComputer);
+    document.getElementById('round-result').textContent = message;
+    document.getElementById('player-score').textContent = 'Player score: '+scorePlayer;
+    document.getElementById('computer-score').textContent = 'Computer score: '+scoreComputer;
 
     if (scoreComputer > 4) {
-        console.log('You lose, go home and practice! Computer is awesome!!');
+        document.getElementById('declare-winner').textContent = 'You lose, go home and practice! Computer is awesome!!';
         scoreComputer = 0;
         scorePlayer = 0;
     } else if (scorePlayer > 4) {
-        console.log('You win, you legend you! Awesome skills!');
+        document.getElementById('declare-winner').textContent = 'You win, you legend you! Awesome skills!';
         scoreComputer = 0;
         scorePlayer = 0;
         }
+    
+    
   
 }
 

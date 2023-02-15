@@ -17,7 +17,7 @@ function playRound(playerSelection, computerSelection) {
        return item;
        }
    computerSelection = getComputerChoice(array);
-       console.log(computerSelection);
+       console.log('Computer choose: '+computerSelection);
       
 
    if(playerSelection == computerSelection) {
@@ -55,7 +55,24 @@ function playRound(playerSelection, computerSelection) {
         scoreComputer = 0;
         scorePlayer = 0;
         }
-    
-
-    
+  
 }
+
+let rockButton = document.getElementById('rock');
+let paperButton = document.getElementById('paper');
+let scissorButton = document.getElementById('scissors');
+
+rockButton.addEventListener('click', function() {
+    playRound('ROCK');
+});
+
+
+paperButton.addEventListener('click', function() {
+    playRound('PAPER');
+});
+
+
+scissorButton.addEventListener('click', function() {
+    playRound('SCISSORS');
+});
+
